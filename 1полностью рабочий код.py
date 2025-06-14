@@ -24,7 +24,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Конфигурация
-TOKEN = '8013532367:AAFZ5wtMMay6URryudqKBbHcyR-RvP5mPOQ'
+TOKEN = os.getenv("TOKEN")  # Получает токен из переменной окружения
+application = Application.builder().token(TOKEN).build()
 ADMINS = ["viktorv_k", "nastyastroyuk"]
 TIMEZONE = pytz.timezone('Europe/Moscow')
 DB_NAME = 'bookings.db'
